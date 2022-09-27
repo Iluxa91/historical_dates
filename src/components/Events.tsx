@@ -2,9 +2,9 @@ import React from "react";
 // @ts-ignore
 import s from "./Events.module.css"
 import {Swiper, SwiperSlide} from "swiper/react";
-// Import Swiper styles
-import "../../node_modules/swiper/swiper.less";
-import "../../node_modules/swiper/modules/navigation/navigation.less"
+// Import Swiper styles.scss
+import "../../node_modules/swiper/swiper.scss";
+import "../../node_modules/swiper/modules/navigation/navigation.scss"
 // import Swiper core and required modules
 // @ts-ignore
 import SwiperCore, {Navigation} from "swiper/core";
@@ -32,7 +32,7 @@ export const Events: React.FC<EventsPropsType> = ({events}) => {
                 {events.map((e) => <SwiperSlide>
                     <div>{e.title}</div>
                     <div>{e.description}</div>
-                    <div>{e.director}</div>
+                    <div>Режиссер: {e.director}</div>
                 </SwiperSlide>)}
             </Swiper>
         </>
