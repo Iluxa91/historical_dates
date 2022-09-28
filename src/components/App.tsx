@@ -7,13 +7,13 @@ import {dates} from "./"
 export type EventType = { title: string, description: string, director: string }
 
 export const App = () => {
-    const [year, setYear] = useState("1980-1989")
+    const [year, setYear] = useState("1970-1979")
     const onChangeEventHandler = (year: string) => {
         setYear(year)
     }
 
     return (
-        <div>
+        <div className={'appBlock'}>
             <Circle onChangeEventHandler={onChangeEventHandler} year={year}/>
             <Events events={dates[year]}/>
         </div>

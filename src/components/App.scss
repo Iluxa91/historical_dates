@@ -1,36 +1,78 @@
-@import "../common/mixins";
+@import "../common/style/mixins";
+@import "../common/style/variables";
 
 body {
-  background: rgb(59, 67, 113);
-  background: -moz-linear-gradient(top, rgba(59, 67, 113, 0.9) 0%, rgba(243, 144, 79, 0.9) 99%);
-  background: -webkit-linear-gradient(top, rgba(59, 67, 113, 0.9) 0%, rgba(243, 144, 79, 0.9) 99%);
-  background: linear-gradient(to bottom, rgba(59, 67, 113, 1) 0%, rgba(243, 144, 79, 1) 99%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3b4371', endColorstr='#f3904f', GradientType=0);
-  background-attachment: fixed;
-}
-
-.advantages {
-  .titleYear {
-    text-align: center;
-    font-size: 30px;
-  }
-
-  &-circle {
-    @include distribute-on-circle(6, 30em, 3em);
-    margin: 5em auto 0;
-    border: 2px solid white;
-
-    &__element {
-      div {
-        display: flex;
-        width: 3em;
-        height: 3em;
-        border: 1px solid;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-
+  background: $bgColor;
+  margin: 0;
+  font: 400 16px/1.8 'Josefin Sans', sans-serif;
+  .appBlock {
+    height: 100vh;
+    margin-left: 320px;
+    .advantages {
+      height: 85%;
+      position: relative;
+      .titleYear {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 180px;
+        font-weight: 700;
+        letter-spacing: 10px;
+        color: #77a3ef;
+        white-space: nowrap;
       }
+      &-circle {
+        @include distribute-on-circle(6, 530px, 56px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        border: 1px solid $primaryColor;
+        &__element {
+          .pointTitle {
+            position: absolute;
+            top: 30%;
+            left: 76px;
+          }
+          .passive {
+            min-height: 6px;
+            min-width: 6px;
+            height: 6px;
+            width: 6px;
+            border: 1px solid $primaryColor;
+            background: $primaryColor;
+            border-radius: 50%;
+            margin: 25px;
+            div {
+              font-size: 0;
+            }
+            &:hover div {
+              font-size: 1rem;
+              transition: all 0.5s ease-in-out;
+            }
+          }
+          .active, .passive:hover {
+            display: flex;
+            position: relative;
+            min-width: 56px;
+            min-height: 56px;
+            width: 56px;
+            height: 56px;
+            border: 1px solid $primaryColor;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0;
+            background: $bgColor;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
+
     }
   }
 }

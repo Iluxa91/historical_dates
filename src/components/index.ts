@@ -1,6 +1,38 @@
 import {EventType} from "./App";
 
 export const dates: { [key: string]: EventType[] } = {
+    ["1970-1979"]: [
+        {
+            title: `Иван Васильевич меняет профессию`,
+            description: `1973, 88 мин. СССР • комедия`,
+            director: `Леонид Гайдай`
+        },
+        {
+            title: `Джентльмены удачи`,
+            description: `1971, 84 мин. СССР • комедия`,
+            director: `Александр Серый`
+        },
+        {
+            title: `Москва слезам не верит`,
+            description: `1979, 150 мин. СССР • мелодрама`,
+            director: `Владимир Меньшов`
+        },
+        {
+            title: `..А зори здесь тихие`,
+            description: `1972, 160 мин. СССР • драма`,
+            director: `Станислав Ростоцкий`
+        },
+        {
+            title: `В бой идут одни «старики»`,
+            description: `1973, 87 мин. СССР • военный`,
+            director: `Леонид Быков`
+        },
+        {
+            title: `Крестный отец The Godfather`,
+            description: `1972, 175 мин. США • драма`,
+            director: `Фрэнсис Форд Коппола`
+        },
+    ],
     ["1980-1989"]: [
         {
             title: `Назад в будущее Back to the Future`,
@@ -123,5 +155,37 @@ export const dates: { [key: string]: EventType[] } = {
             description: `2019, 113 мин. Великобритания • криминал`,
             director: `Гай Ричи`
         },
-    ]
+    ],
+    ["2020-2025"]: [
+        {
+            title: `Зверопой 2 Sing 2`,
+            description: `2021, 110 мин. США • мультфильм`,
+            director: `Гарт Дженнингс`
+        },
+        {
+            title: `Душа Soul`,
+            description: `2020, 106 мин. США • мультфильм`,
+            director: `Пит Доктер`
+        },
+        {
+            title: `Подольские курсанты`,
+            description: `2020, 136 мин. Россия • военный`,
+            director: `Вадим Шмелев`
+        },
+        {
+            title: `Легенда о волках WolfWalkers`,
+            description: `2020, 103 мин. ИрландияЛюксембургФранция • мультфильм`,
+            director: `Томм Мур`
+        },
+        {
+            title: `Доктор Лиза`,
+            description: `2020, 120 мин. Россия • драма`,
+            director: `Оксана Карас`
+        },
+        {
+            title: `Её заветное желание Josee to Tora to Sakana-tachi`,
+            description: `2020, 99 мин. Япония • аниме`,
+            director: `Котаро Тамура`
+        },
+    ],
 }
