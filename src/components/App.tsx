@@ -4,7 +4,7 @@ import {Events} from "./Events";
 import {Circle} from "./Circle";
 import {dates} from "./"
 
-export type EventType = { title: string, description: string, director: string }
+export type EventType = { year: number, title: string, description: string, director: string }
 
 export const App = () => {
     const [year, setYear] = useState("1970-1979")

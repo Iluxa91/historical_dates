@@ -1,6 +1,5 @@
 import React from "react";
-// @ts-ignore
-import s from "./Circle.module.scss"
+import "./Circle.scss"
 // @ts-ignore
 import right from "../common/images/right.svg"
 // @ts-ignore
@@ -37,30 +36,33 @@ export const Circle: React.FC<CirclePropsType> = ({onChangeEventHandler, year}) 
     }
     return (
         <div className="advantages">
-            <div className="titleYear">{year}</div>
+            <div className="yearTitle">
+                <span>{year.slice(0, 4)}</span><span>{year.slice(-4)}</span></div>
+            <div className="dateTitle">Исторические даты</div>
             <ul className="advantages-circle">
                 {points.map((p) =>
                     <li onClick={() => onChangeEventHandler(years[p])}
                         key={p}
-                        className="advantages-circle__element">
+                        className="advantages-circle__element"
+                    >
                         {
-                            <div>
+                            <div className={'item'}>
                                 <div className={
                                     years[p] === currentYear[1] ? "active" : "passive"}>
                                     <div>{p}</div>
                                 </div>
                                 {years[p] === currentYear[1] &&
-                                    <div className={"pointTitle"}>Cinema</div>}
+                                    <div className="pointTitle">Cinema</div>}
                             </div>
                         }
                     </li>
                 )}
             </ul>
-            <div style={{position: "absolute", bottom: '56px' }}>
-                <div> {+currentYear[0]}/{points.length}</div>
-                <button className={s.button} disabled={year === years[1]}
+            <div className={'buttonContainer'}>
+                <div>0{+currentYear[0]}/0{points.length}</div>
+                <button disabled={year === years[1]}
                         onClick={() => setPage("minus")}><img src={left}/></button>
-                <button className={s.button} disabled={year === years[6]}
+                <button disabled={year === years[6]}
                         onClick={() => setPage("plus")}><img src={right}/></button>
             </div>
         </div>
