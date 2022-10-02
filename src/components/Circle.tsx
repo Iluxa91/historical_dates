@@ -5,6 +5,7 @@ import right from "../common/images/right.svg"
 // @ts-ignore
 import left from "../common/images/left.svg"
 
+
 type YearsType = {
     [key: number]: string
 }
@@ -39,7 +40,7 @@ export const Circle: React.FC<CirclePropsType> = ({onChangeEventHandler, year}) 
             <div className="yearTitle">
                 <span>{year.slice(0, 4)}</span><span>{year.slice(-4)}</span></div>
             <div className="dateTitle">Исторические даты</div>
-            <ul className="advantages-circle">
+            <ul className={["advantages-circle",'2' === currentYear[0]&&'anim2','3' === currentYear[0]&&'anim3'].join(' ')}>
                 {points.map((p) =>
                     <li onClick={() => onChangeEventHandler(years[p])}
                         key={p}
@@ -48,7 +49,7 @@ export const Circle: React.FC<CirclePropsType> = ({onChangeEventHandler, year}) 
                         {
                             <div className={'item'}>
                                 <div className={
-                                    years[p] === currentYear[1] ? "active" : "passive"}>
+                                    `${years[p] === currentYear[1] ? "active" : "passive"}`}>
                                     <div>{p}</div>
                                 </div>
                                 {years[p] === currentYear[1] &&
