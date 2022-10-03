@@ -29,7 +29,7 @@ export const Events: React.FC<EventsPropsType> = ({events}) => {
                 navigation={true}
                 className="mySwiper"
             >
-                {events.map((e) => <SwiperSlide>
+                {events.map((e,index) => <SwiperSlide key={index}>
                     <div className={s.yearText}>{e.year}</div>
                     <div>{e.title}</div>
                     <div>{e.description}</div>

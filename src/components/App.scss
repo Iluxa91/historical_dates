@@ -71,32 +71,31 @@ body {
 
         &__element {
           &:nth-of-type(1) {
-            animation: spin1 2s linear forwards;
+            //offset-path: path("M265,0 A265,265 0 1,1 265,530 A265,265 0 1,1 265,0");
+           //animation: spin1 2s linear forwards;
+           // offset-rotate: 0deg;
           }
+          //
+          //&:nth-of-type(2) {
+          //  animation: spin2 2s linear forwards;
+          //}
+          //
+          //&:nth-of-type(3) {
+          //  animation: spin3 2s linear forwards;
+          //}
+          //
+          //&:nth-of-type(4) {
+          //  animation: spin4 2s linear forwards;
+          //}
+          //
+          //&:nth-of-type(5) {
+          //  animation: spin5 2s linear forwards;
+          //}
+          //
+          //&:nth-of-type(6) {
+          //  animation: spin6 2s linear forwards;
+          //}
 
-          &:nth-of-type(2) {
-            animation: spin2 2s linear forwards;
-          }
-
-          &:nth-of-type(3) {
-            animation: spin3 2s linear forwards;
-          }
-
-          &:nth-of-type(4) {
-            animation: spin4 2s linear forwards;
-          }
-
-          &:nth-of-type(5) {
-            animation: spin5 2s linear forwards;
-          }
-
-          &:nth-of-type(6) {
-            animation: spin6 2s linear forwards;
-          }
-
-          .animation2 {
-            animation: spin2 2s linear forwards;
-          }
 
           .pointTitle {
             position: absolute;
@@ -162,6 +161,7 @@ body {
   }
   100% {
     transform: translate(265px) rotate(-300deg);
+    offset-rotate: 0deg;
   }
 }
 

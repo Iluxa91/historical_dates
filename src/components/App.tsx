@@ -8,13 +8,15 @@ export type EventType = { year: number, title: string, description: string, dire
 
 export const App = () => {
     const [year, setYear] = useState("1970-1979")
-    const onChangeEventHandler = (year: string) => {
-        setYear(year)
+    const [prevYear, setPrevYear] = useState(year)
+    const onChangeEventHandler = (value: string) => {
+        setYear(value)
+        setPrevYear(year)
     }
 
     return (
         <div className={'appBlock'}>
-            <Circle onChangeEventHandler={onChangeEventHandler} year={year}/>
+            <Circle onChangeEventHandler={onChangeEventHandler} year={year} prevYear={prevYear}/>
             <Events events={dates[year]}/>
         </div>
     );
