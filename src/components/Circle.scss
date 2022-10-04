@@ -1,26 +1,206 @@
 @import "../common/style/variables";
+@import "../common/style/mixins";
 
-.buttonContainer {
-  position: absolute;
-  bottom: 56px;
-  div {
-    font-size: 14px;
-  }
-  button {
-    width: 50px;
-    height: 50px;
-    border: 1px solid $primaryColor;
-    color: $primaryColor;
-    background: $bgColor;
-    border-radius: 50%;
+.advantages {
+  height: 80%;
+  position: relative;
+
+  .yearTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    cursor: pointer;
-    margin-right: 20px;
-    margin-top: 20px;
+    font-size: 200px;
+    font-weight: 700;
+    line-height: 160px;
+    color: #5D5FEF;
+    white-space: nowrap;
+
+    span:nth-child(2) {
+      color: #ee5da7;
+      padding-left: 80px;
+    }
   }
-  button[disabled] {
-    border: 1px solid rgba(118, 118, 118, 0.3);
-    background: rgba(239, 239, 239, 0.3);
-    cursor: not-allowed;
+
+  .dateTitle {
+    position: absolute;
+    top: 170px;
+    left: 0;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 120%;
+    width: 353px;
+    padding-left: 80px;
+  }
+
+  &-circle {
+    @include distribute-on-circle(6, 530px, 56px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear forwards;
+    margin: 0;
+    border: 1px solid rgba(66,86,122,0.2);
+
+    &__element {
+      &:nth-of-type(1) {
+        animation: spin1 2s linear forwards;
+      }
+      &:nth-of-type(2) {
+        animation: spin2 2s linear forwards;
+      }
+      &:nth-of-type(3) {
+        animation: spin3 2s linear forwards;
+      }
+      &:nth-of-type(4) {
+        animation: spin4 2s linear forwards;
+      }
+
+      &:nth-of-type(5) {
+        animation: spin5 2s linear forwards;
+      }
+
+      &:nth-of-type(6) {
+        animation: spin6 2s linear forwards;
+      }
+
+      .pointTitle {
+        position: absolute;
+        top: 22%;
+        left: 76px;
+        font-weight: 700;
+      }
+
+      .passive {
+        min-height: 6px;
+        min-width: 6px;
+        height: 6px;
+        width: 6px;
+        border: 1px solid $primaryColor;
+        background: $primaryColor;
+        border-radius: 50%;
+        margin: 25px;
+
+        div {
+          font-size: 0;
+        }
+
+        &:hover div {
+          font-size: 1rem;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+
+      .active, .passive:hover {
+        display: flex;
+        position: relative;
+        min-width: 56px;
+        min-height: 56px;
+        width: 56px;
+        height: 56px;
+        border: 1px solid $primaryColor;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0;
+        background: $bgColor;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .buttonContainer {
+    position: absolute;
+    bottom: 56px;
+    padding-left: 80px;
+
+    div {
+      font-size: 14px;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      border: 1px solid $primaryColor;
+      color: $primaryColor;
+      background: $bgColor;
+      border-radius: 50%;
+      text-align: center;
+      cursor: pointer;
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+
+    button[disabled] {
+      border: 1px solid rgba(118, 118, 118, 0.3);
+      background: rgba(239, 239, 239, 0.3);
+      cursor: not-allowed;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(300deg);
+  }
+}
+
+@keyframes spin1 {
+  0% {
+    transform: translate(265px) rotate(0);
+  }
+  100% {
+    transform: translate(265px) rotate(-300deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(60deg) translate(265px) rotate(300deg);
+  }
+  100% {
+    transform: rotate(60deg) translate(265px) rotate(0deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotate(120deg) translate(265px) rotate(240deg);
+  }
+  100% {
+    transform: rotate(120deg) translate(265px) rotate(-60deg);
+  }
+}
+
+@keyframes spin4 {
+  0% {
+    transform: rotate(180deg) translate(265px) rotate(180deg);
+  }
+  100% {
+    transform: rotate(180deg) translate(265px) rotate(-120deg);
+  }
+}
+
+@keyframes spin5 {
+  0% {
+    transform: rotate(240deg) translate(265px) rotate(120deg);
+  }
+  100% {
+    transform: rotate(240deg) translate(265px) rotate(-180deg);
+  }
+}
+
+@keyframes spin6 {
+  0% {
+    transform: rotate(300deg) translate(265px) rotate(60deg);
+  }
+  100% {
+    transform: rotate(300deg) translate(265px) rotate(-240deg);
   }
 }

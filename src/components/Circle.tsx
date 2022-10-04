@@ -54,35 +54,12 @@ export const Circle: React.FC<CirclePropsType> = ({
         endingYear > +year.slice(-4) && setTimeout(() => setEndingYear(endingYear - 1), 50)
     }, [year, beginningYear, endingYear])
 
-    // el.addEventListener("ul", () => {
-    //     let rot = itr.value;
-    //     theG.setAttribute("transform", `rotate(${rot} 700 -40)`)
-    //     dot2006.setAttribute("transform", `rotate(${-rot} 302 480)`);
-    //     dot2007.setAttribute("transform", `rotate(${-rot} 700 600)`);
-    //     dot2008.setAttribute("transform", `rotate(${-rot} 1100 480)`);
-    // });
     let ref = useRef(null)
     let rotate
 
     useEffect(() => {
         rotate = window.getComputedStyle(ref.current).transform;
     },[])
-
-   // const angle = (i:any) => {
-   //      let arr = i.match(/-?\d+\.?\d+[^,]/gi);
-   //      let [cos, sin] = [arr[0], arr[1]];
-   //
-   //      let degree = Math.round(Math.asin(sin) * (180 / Math.PI));
-   //      if (cos < 0) {
-   //          let addDegree = 90 - Math.round(Math.asin(sin) * (180 / Math.PI));
-   //          degree = 90 + addDegree;
-   //      }
-   //      if (degree < 0) {
-   //          degree = 360 + degree;
-   //      }
-   //      return degree;
-   //  }
-   //  console.log(angle(rotate))
 
     return (
         <div className="advantages">
