@@ -1,4 +1,5 @@
 @import "../common/style/variables";
+@import "../common/style/mixins";
 
 body {
   background: $bgColor;
@@ -14,24 +15,11 @@ body {
     box-sizing: border-box;
 
     &::after {
-      position: absolute;
-      background: $primaryColor;
-      opacity: 0.1;
-      content: '';
-      width: 1px;
-      height: 100%;
-      left: 50%;
-      top:0
+      @include line(1px, 100%, 0, 50%)
     }
+
     &::before {
-      position: absolute;
-      background: $primaryColor;
-      opacity: 0.1;
-      content: '';
-      width: 100%;
-      height: 1px;
-      left: 0;
-      top: 41%
+      @include line(100%, 1px, 41%, 0)
     }
   }
 }

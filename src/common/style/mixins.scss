@@ -1,4 +1,6 @@
 @use 'sass:math';
+@import "variables";
+
 
 @mixin distribute-on-circle( $nb-items, $circle-size, $item-size) {
   $half-item: math.div($item-size, 2);
@@ -22,9 +24,20 @@
   $angle: math.div(360, $nb-items);
   $rot: 0;
   @for $i from 1 through $nb-items {
-    >:nth-of-type(#{$i}) {
+    > :nth-of-type(#{$i}) {
       transform: rotate($rot * 1deg) translate($half-parent) rotate($rot * -1deg);
     }
     $rot: ($rot + $angle);
   }
+}
+
+@mixin line($width,$height,$top,$left) {
+  position: absolute;
+  background: $primaryColor;
+  opacity: 0.1;
+  content: '';
+  width: $width;
+  height: $height;
+  top: $top;
+  left: $left;
 }

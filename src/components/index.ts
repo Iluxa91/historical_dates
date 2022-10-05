@@ -1,4 +1,4 @@
-import {EventType} from "./App";
+import {EventType} from "./Events/Events";
 
 export const dates: { [key: string]: EventType[] } = {
     ["1970-1979"]: [
